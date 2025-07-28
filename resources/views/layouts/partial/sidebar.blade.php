@@ -1,40 +1,42 @@
-	<nav id="sidebar" class="sidebar js-sidebar">
-			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
-          <span class="align-middle">AdminKit</span>
+<nav id="sidebar" class="sidebar js-sidebar">
+    <div class="sidebar-content js-simplebar">
+
+        <!-- Brand Logo -->
+        <a class="sidebar-brand d-flex align-items-center gap-2 px-3 py-3" href="{{ url('/') }}">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" height="40" class="rounded-circle shadow-sm">
+            <span class="align-middle fw-bold text-primary fs-5">PrintReceipt</span>
         </a>
 
-				<ul class="sidebar-nav">
-					<li class="sidebar-header">
-						Pages
-					</li>
+        <ul class="sidebar-nav">
 
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="index.html">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-            </a>
-					</li>
+            <li class="sidebar-header">
+                Pages
+            </li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Designation </span>
-            </a>
-					</li>
+            <!-- Dashboard -->
+            <li class="sidebar-item active">
+                <a class="sidebar-link" href="{{ url('/') }}">
+                    <i class="align-middle" data-feather="sliders"></i>
+                    <span class="align-middle">Dashboard</span>
+                </a>
+            </li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Student</span>
-            </a>
-					</li>
+            <!-- Printer Type -->
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('printer.printer_type') }}">
+                    <i class="align-middle" data-feather="printer"></i>
+                    <span class="align-middle">Printer Type</span>
+                </a>
+            </li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Company</span>
-            </a>
-					</li>
+            <!-- Printer Management -->
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('printer.printer_managment') }}">
+                    <i class="align-middle" data-feather="settings"></i>
+                    <span class="align-middle">Printer Management</span>
+                </a>
+            </li>
 
-				</ul>
-
-
-			</div>
-		</nav>
+        </ul>
+    </div>
+</nav>

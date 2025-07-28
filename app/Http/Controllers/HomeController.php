@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('dashbord');
     }
+
+    public function printerType()
+    {
+        return view('printer.printer_type');
+    }
+
+    public function printerManagement()
+    {
+        return view('printer.printer_management');
+    }
 }
