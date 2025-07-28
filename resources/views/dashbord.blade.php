@@ -1,5 +1,5 @@
 @extends('layouts.app')
-	@section('home2')
+	@section('contain')
 <h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
 
 
