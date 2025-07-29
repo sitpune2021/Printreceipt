@@ -23,7 +23,7 @@
 
             <!-- Printer Type -->
             <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('printer.printer_type') }}">
+                <a class="sidebar-link" href="{{ route('printer.printer-type') }}">
                     <i class="align-middle" data-feather="printer"></i>
                     <span class="align-middle">Printer Type</span>
                 </a>
@@ -36,6 +36,9 @@
                     <span class="align-middle">Printer Management</span>
                 </a>
             </li>
+
+
+            
 
         </ul>
     </div>

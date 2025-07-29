@@ -1,71 +1,103 @@
-
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4">
-    <div class="card shadow-sm border-0">
-        <div class="card-header bg-gradient-primary py-4 text-white" style="background: linear-gradient(135deg, #00d2ff 0%, #1d2632ff 100%);">
+
+<div class="container py-4">
+    <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+        <!-- Header -->
+        <div class="card-header bg-light py-3 border-bottom">
             <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h3 class="fw-bold mb-1"><i class="bi bi-printer-fill me-2"></i>Printer Types Management</h3>
+                <h4 class="mb-0 fw-semibold">
+                    <i class="bi bi-printer me-2 text-primary"></i> Printer Details
+                </h4>
+                <span class="badge bg-primary bg-opacity-10 text-primary fs-6">
+                    ID: 1
+                </span>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body p-4">
+            <div class="row g-4">
+                <!-- Left Column -->
+                <div class="col-md-6">
+                    <!-- Printer Identification -->
+                    <div class="border rounded-3 p-3 h-100">
+                        <h6 class="fw-semibold mb-3 text-muted d-flex align-items-center">
+                            <i class="bi bi-upc-scan me-2 text-primary"></i> Printer Identification
+                        </h6>
+
+                        <div class="mb-3">
+                            <label class="form-label text-muted small mb-1">Printer ID</label>
+                            <div class="fs-5 fw-semibold">1</div>
+                        </div>
+
+                        <div class="mb-0">
+                            <label class="form-label text-muted small mb-1">MAC Address</label>
+                            <div class="font-monospace">XX:XX:XX:XX:XX:XX</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white rounded-3 p-2 shadow-sm">
-                    <i class="bi bi-gear-fill text-primary fs-4"></i>
+
+                <!-- Right Column -->
+                <div class="col-md-6">
+                    <!-- Model Information -->
+                    <div class="border rounded-3 p-3 h-100">
+                        <h6 class="fw-semibold mb-3 text-muted d-flex align-items-center">
+                            <i class="bi bi-tags me-2 text-primary"></i> Model Information
+                        </h6>
+
+                        <div class="mb-3">
+                            <label class="form-label text-muted small mb-1">Display Name</label>
+                            <div class="fs-5 fw-semibold">Office Printer Pro</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-muted small mb-1">Registered By</label>
+                            <div class="fw-medium">Admin User</div>
+                        </div>
+
+                        <div class="mb-0">
+                            <label class="form-label text-muted small mb-1">Registration Date</label>
+                            <div class="fw-medium">2024-04-24</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="mt-4 p-3 bg-light bg-opacity-50 rounded-3">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="badge bg-success bg-opacity-10 text-success">
+                            <i class="bi bi-check-circle-fill me-1"></i> Online
+                        </span>
+                        <span class="text-muted small ms-3">Last active: 2 minutes ago</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary">
+                        <i class="bi bi-arrow-clockwise"></i> Refresh Status
+                    </button>
                 </div>
             </div>
         </div>
 
-        <div class="card-body">
-            <form>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label class="form-label">Printer ID</label>
-                        <input type="text" class="form-control" placeholder="Enter Printer ID">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">MAC Address</label>
-                        <input type="text" class="form-control" placeholder="XX:XX:XX:XX:XX:XX">
-                    </div>
+        <!-- Footer Actions -->
+        <div class="card-footer bg-light py-3 border-top">
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-1"></i> Back to List
+                </button>
+                <div>
+                    <button class="btn btn-outline-danger me-2">
+                        <i class="bi bi-trash me-1"></i> Remove
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="bi bi-pencil-fill me-1"></i> Edit Details
+                    </button>
                 </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label class="form-label">Model</label>
-                        <input type="text" class="form-control" placeholder="e.g., Epson TM-T88">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Display Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Display Name">
-                    </div>
-                </div>
-
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <label class="form-label">Registered By</label>
-                        <select class="form-select">
-                            <option selected disabled>-- Select User --</option>
-                            <option>Admin</option>
-                            <option>Operator</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Registration Date</label>
-                        <input type="date" class="form-control">
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-between">
-                    <a href="#" class="btn btn-outline-secondary">Back to List</a>
-                    <div>
-                        <button type="reset" class="btn btn-light me-2">Reset</button>
-                        <button type="submit" class="btn btn-primary">Save Printer</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
 @endsection
-
-
-

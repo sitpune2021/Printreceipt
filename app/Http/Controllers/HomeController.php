@@ -28,7 +28,7 @@ class HomeController extends Controller
 
     public function printerType()
     {
-        return view('printer.printer_type');
+        return view('printer.printer-type');
     }
 
     public function printerManagement()
