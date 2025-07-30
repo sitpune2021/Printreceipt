@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use  App\Http\Controllers\HomeController;
-use App\Http\Controllers\PrinterManagementController;
 use App\Http\Controllers\PrinterTypeController;
+use App\Http\Controllers\PrinterSettingController;
 
 Auth::routes();
 
@@ -15,12 +15,6 @@ Route::get('/printer-type', [HomeController::class, 'printerType'])->name('print
 
 
 
-Route::get('/printerManagement', [PrinterManagementController::class, 'index'])->name('printers.index');
-Route::post('/printerManagement/store', [PrinterManagementController::class, 'store'])->name('printers.store');
-Route::get('/printerManagement/edit/{id}', [PrinterManagementController::class, 'edit'])->name('printers.edit');
-Route::post('/printerManagement/update/{id}', [PrinterManagementController::class, 'update'])->name('printers.update');
-Route::get('/printerManagement/delete/{id}', [PrinterManagementController::class, 'delete'])->name('printers.delete');
-Route::get('/printer-management', [HomeController::class, 'printerManagement'])->name('printer.printer_managment');
 
 // Printer Types Routes
 Route::get('/printer-type', [PrinterTypeController::class, 'create'])->name('printer.printer-type');
@@ -30,3 +24,12 @@ Route::post('/printer-type/{id}/update', [PrinterTypeController::class, 'update'
 Route::delete('/printer-type/{id}', [PrinterTypeController::class, 'destroy'])->name('printer.printer-type.destroy');
 
 
+
+
+
+
+Route::get('/printer-setting', [PrinterSettingController::class, 'index'])->name('printer.printer-setting');
+Route::post('/printer-setting', [PrinterSettingController::class, 'store'])->name('printer.setting.store');
+Route::get('/printer-setting/{id}/edit', [PrinterSettingController::class, 'edit'])->name('printer.setting.edit');
+Route::post('/printer-setting/{id}/update', [PrinterSettingController::class, 'update'])->name('printer.setting.update');
+Route::delete('/printer-setting/{id}', [PrinterSettingController::class, 'destroy'])->name('printer.setting.delete');

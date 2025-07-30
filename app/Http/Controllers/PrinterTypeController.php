@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+
+
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\PrinterType;
+use App\Http\Controllers\Controller;
+
+
+
 
 class PrinterTypeController extends Controller
 {
     public function create()
     {
        $printerTypes = PrinterType::orderBy('created_at', 'asc')->get(); // ascending order
-           return view('printer.printer-type', compact('printerTypes'));
+        return view('printer.printer-type', compact('printerTypes'));
     }
 
     public function store(Request $request)
@@ -33,7 +39,8 @@ class PrinterTypeController extends Controller
 
         PrinterType::create($validated);
 
-        return redirect()->route('printer.printer-type')->with('success', 'Printer Type added successfully!');
+        return redirect()->route('printer.printer-type')->with('success', 'Saved successfully!');
+
     }
 
     public function edit($id)

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('printer_types', function (Blueprint $table) {
             $table->id(); // Auto-increment primary key
-            $table->string('printer_type_id')->nullable(); // Optional custom ID
             $table->string('name'); // Printer type name
             $table->string('protocol'); // Communication protocol
             $table->boolean('status')->default(1); // Active/inactive
