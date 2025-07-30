@@ -23,20 +23,22 @@
                 </a>
             </li>
 
-
             <!-- Printer Settings -->
            <li class="sidebar-item">
-      <a class="sidebar-link" href="{{ route('printer.printer-setting') }}">
-        <i class="align-middle" data-feather="printer"></i>
-        <span class="align-middle">Printer Setting</span>
-    </a>
-</li>
+                <a class="sidebar-link" href="{{ route('printer.printer-setting') }}">
+                    <i class="align-middle" data-feather="printer"></i>
+                    <span class="align-middle">Printer Setting</span>
+                </a>
+            </li>
 
 
-
-
-
-
+            <!-- Printer Management -->
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('printers.index') }}">
+                    <i class="align-middle" data-feather="settings"></i>
+                    <span class="align-middle">Printers</span>
+                </a>
+            </li>
 
 
 
