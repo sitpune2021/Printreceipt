@@ -8,8 +8,8 @@
              style="background: linear-gradient(135deg, #00d2ff 0%, #1d2632ff 100%);">
             <div class="d-flex justify-content-between align-items-center">
                 <h3 class="fw-bold mb-1"><i class="bi bi-printer-fill me-2"></i>{{ isset($printer) ? 'Edit Printers' : 'Add New Printers' }}</h3>
-                <div class="bg-white rounded-3 p-2 shadow-sm">
-                    <i class="bi bi-gear-fill text-primary fs-4"></i>
+              <div class="bg-white rounded-3 p-2 shadow-sm">
+                    <i class="fas fa-print text-primary fs-4"></i>
                 </div>
             </div>
         </div>

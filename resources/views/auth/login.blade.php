@@ -19,7 +19,7 @@
                             <div class="input-group input-group-sm">
                                 <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
                                 <input id="email" type="email" class="form-control form-control-sm @error('email') is-invalid @enderror"
-                                       name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                                       name="email" value="{{ old('email') }}"  autocomplete="email" autofocus
                                        placeholder="Your email">
                             </div>
                             @error('email')
@@ -35,7 +35,7 @@
                             <div class="input-group input-group-sm">
                                 <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                                 <input id="password" type="password" class="form-control form-control-sm @error('password') is-invalid @enderror"
-                                       name="password" required autocomplete="current-password"
+                                       name="password"  autocomplete="current-password"
                                        placeholder="Enter password">
                             </div>
                             @error('password')
@@ -52,6 +52,10 @@
                                 {{ __('Remember Me') }}
                             </label>
                         </div>
+<div class="text-center mt-2 small text-muted">
+    Don't have an account?
+    <a href="{{ route('register') }}" class="text-decoration-none">{{ __('Register') }}</a>
+</div>
 
                         <!-- Submit Button -->
                         <div class="d-grid mt-3">

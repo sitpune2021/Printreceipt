@@ -56,7 +56,7 @@
 
         <!-- Printer Type -->
         <div class="col-md-4 mb-4">
-            <label class="form-label fw-semibold text-muted small">PRINTER TYPE</label>
+            <label class="form-label fw-semibold text-muted small">PRINTER TYPE ID</label>
             <div class="input-group input-group-lg">
                 <select name="printer_type_id" class="form-select form-select-lg">
                     <option value="">Select Printer Type</option>
@@ -67,7 +67,6 @@
                     @endforeach
                 </select>
             </div>
-            @error('printer_type_id') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
 
         <!-- Alignment -->

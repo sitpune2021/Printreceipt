@@ -18,7 +18,7 @@
                             <div class="input-group input-group-sm"> <!-- 👈 Smaller input group -->
                                 <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
                                 <input id="name" type="text" class="form-control form-control-sm @error('name') is-invalid @enderror"
-                                       name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
+                                       name="name" value="{{ old('name') }}"     autocomplete="name" autofocus
                                        placeholder="Your full name">
                             </div>
                             @error('name')
@@ -34,7 +34,7 @@
                             <div class="input-group input-group-sm">
                                 <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
                                 <input id="email" type="email" class="form-control form-control-sm @error('email') is-invalid @enderror"
-                                       name="email" value="{{ old('email') }}" required autocomplete="email"
+                                       name="email" value="{{ old('email') }}"   autocomplete="email"
                                        placeholder="Your email">
                             </div>
                             @error('email')
@@ -50,7 +50,7 @@
                             <div class="input-group input-group-sm">
                                 <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                                 <input id="password" type="password" class="form-control form-control-sm @error('password') is-invalid @enderror"
-                                       name="password" required autocomplete="new-password"
+                                       name="password"   autocomplete="new-password"
                                        placeholder="Create password">
                             </div>
                             @error('password')
@@ -66,7 +66,7 @@
                             <div class="input-group input-group-sm">
                                 <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                                 <input id="password-confirm" type="password" class="form-control form-control-sm"
-                                       name="password_confirmation" required autocomplete="new-password"
+                                       name="password_confirmation"      autocomplete="new-password"
                                        placeholder="Confirm password">
                             </div>
                         </div>

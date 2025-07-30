@@ -7,9 +7,9 @@
         <div class="card-header bg-gradient-primary py-4 text-white"
              style="background: linear-gradient(135deg, #00d2ff 0%, #1d2632ff 100%);">
             <div class="d-flex justify-content-between align-items-center">
-                <h3 class="fw-bold mb-1"><i class="bi bi-printer-fill me-2"></i>Printer Types Management</h3>
-                <div class="bg-white rounded-3 p-2 shadow-sm">
-                    <i class="bi bi-gear-fill text-primary fs-4"></i>
+                <h3 class="fw-bold mb-1"><i class="bi bi-printer-fill me-2"></i>Printer Types</h3>
+                  <div class="bg-white rounded-3 p-2 shadow-sm">
+                    <i class="fas fa-print text-primary fs-4"></i>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                                 <span class="input-group-text bg-light"><i class="bi bi-tag-fill text-primary"></i></span>
                                 <input type="text" name="name" class="form-control form-control-lg"
                                        value="{{ old('name', $editData->name ?? '') }}"
-                                       placeholder="e.g., Thermal Receipt Printer">
+                                       placeholder="Enter a name">
                             </div>
                             @error('name')
                                 <small class="text-danger">{{ $message }}</small>
