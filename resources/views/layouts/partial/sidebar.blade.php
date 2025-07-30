@@ -33,7 +33,7 @@
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('printers.index') }}">
                     <i class="align-middle" data-feather="settings"></i>
-                    <span class="align-middle">Printer Management</span>
+                    <span class="align-middle">Printers</span>
                 </a>
             </li>
 

@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('printer_management', function (Blueprint $table) {
+        Schema::create('printers', function (Blueprint $table) {
             $table->id();
             $table->string('mac_address')->unique();
             $table->string('model');
             $table->string('display_name');
-          $table->string('registered_by');  
+            $table->string('registered_by');  
             $table->date('registration_date');
-
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('printer_management');
+        Schema::dropIfExists('printers');
     }
 };
