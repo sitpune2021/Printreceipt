@@ -8,35 +8,33 @@
         </a>
 
         <ul class="sidebar-nav">
-
             <li class="sidebar-header">
                 Pages
             </li>
 
-            <!-- Dashboard -->
-            <li class="sidebar-item active">
-                <a class="sidebar-link" href="{{ url('/') }}">
-                    <i class="align-middle" data-feather="sliders"></i>
-                    <span class="align-middle">Dashboard</span>
+            <!-- Printer Type -->
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('printer.printer-type') }}">
+                    <i class="align-middle" data-feather="layers"></i> <!-- better than printer -->
+                    <span class="align-middle">Printer Type</span>
                 </a>
             </li>
 
-            <!-- Printer Type -->
+            <!-- Printer Settings -->
             <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('printer.printer_type') }}">
-                    <i class="align-middle" data-feather="printer"></i>
-                    <span class="align-middle">Printer Type</span>
+                <a class="sidebar-link" href="{{ route('printer.printer-setting') }}">
+                    <i class="align-middle" data-feather="sliders"></i> <!-- for settings -->
+                    <span class="align-middle">Printer Setting</span>
                 </a>
             </li>
 
             <!-- Printer Management -->
             <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('printer.printer_managment') }}">
-                    <i class="align-middle" data-feather="settings"></i>
-                    <span class="align-middle">Printer Management</span>
+                <a class="sidebar-link" href="{{ route('printers.index') }}">
+                    <i class="align-middle" data-feather="cpu"></i> <!-- for actual printer device mgmt -->
+                    <span class="align-middle">Printers</span>
                 </a>
             </li>
-
         </ul>
     </div>
 </nav>
