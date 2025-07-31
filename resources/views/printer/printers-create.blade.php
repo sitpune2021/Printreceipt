@@ -118,10 +118,18 @@
                 </div>
 
                 <!-- Submit Button -->
-                <div class="d-flex justify-content-end align-items-center border-top pt-4 mt-2">
-                    <button type="submit" class="btn px-4 shadow-sm text-white" style="background-color: #1A3645;">
-                        <i class="bi bi-save me-2"></i>{{ isset($printer) ? 'Update' : 'Save' }}
-                    </button>
+                <div class="d-flex justify-content-end align-items-center  pt-4 mt-2">
+                    
+                    <button type="submit" class="btn shadow-sm text-white " style="background-color: #1A3645; margin-left:20px;">
+                          <a href="{{ route('printer.printer-type') }}" class="btn  shadow-sm text-white" style="background-color: #1A3645;">
+{{ isset($printer) ? 'Update' : 'Save' }}
+</a>
+                        </button>
+                    <button type="submit" class="btn shadow-sm text-white " style="background-color: #1A3645; margin-left:20px;">
+                          <a href="{{ route('printer.printer-type') }}" class="btn  shadow-sm text-white" style="background-color: #1A3645;">
+{{ isset($editData) ? 'Cancel' : 'Back' }}
+</a>
+                        </button>
                 </div>
             </form>
         </div>

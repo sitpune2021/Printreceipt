@@ -25,6 +25,22 @@
     @csrf
 
     <div class="row">
+
+       <!-- Printer Type ID -->
+        <div class="col-md-8 mb-4">
+            <label class="form-label fw-semibold text-muted small">PRINTER TYPE ID <span class="text-danger">*</span></label>
+            <select name="printer_type_id" class="form-select form-select-lg">
+                <option value="">Select Printer Type</option>
+                @foreach($printerTypes as $type)
+                    <option value="{{ $type->id }}"
+                        {{ old('printer_type_id', $editData->printer_type_id ?? '') == $type->id ? 'selected' : '' }}>
+                        {{ $type->printer_type_id }}
+                    </option>
+                @endforeach
+            </select>
+            @error('printer_type_id') <small class="text-danger">{{ $message }}</small> @enderror
+        </div>
+
         <!-- Margin Top -->
         <div class="col-md-4 mb-4">
             <label class="form-label fw-semibold text-muted small">MARGIN TOP <span class="text-danger">*</span></label>
@@ -73,21 +89,7 @@
             @error('line_spacing') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
 
-        <!-- Printer Type ID -->
-        <div class="col-md-4 mb-4">
-            <label class="form-label fw-semibold text-muted small">PRINTER TYPE ID <span class="text-danger">*</span></label>
-            <select name="printer_type_id" class="form-select form-select-lg">
-                <option value="">Select Printer Type</option>
-                @foreach($printerTypes as $type)
-                    <option value="{{ $type->id }}"
-                        {{ old('printer_type_id', $editData->printer_type_id ?? '') == $type->id ? 'selected' : '' }}>
-                        {{ $type->printer_type_id }}
-                    </option>
-                @endforeach
-            </select>
-            @error('printer_type_id') <small class="text-danger">{{ $message }}</small> @enderror
-        </div>
-
+     
         <!-- Alignment -->
         <div class="col-md-4 mb-4">
             <label class="form-label fw-semibold text-muted small">ALIGNMENT <span class="text-danger">*</span></label>
@@ -104,16 +106,19 @@
     </div>
 
     <!-- Submit Button -->
-    <div class="d-flex justify-content-end border-top pt-4 mt-2">
+    <div class="d-flex justify-content-end  pt-4 mt-2 ">
         <button class="btn px-4 shadow-sm text-white" style="background-color: #1A3645;">
-            <i class="fas fa-save me-2"></i>{{ isset($editData) ? 'Update' : 'Save' }}
-        </button>
+            {{ isset($editData) ? 'Update' : 'Save' }}
+</button>
+<button type="submit" class="btn shadow-sm text-white " style="background-color: #1A3645; margin-left:20px;">
+                          <a href="{{ route('printer.printer-type') }}" class="btn  shadow-sm text-white" style="background-color: #1A3645;">
+{{ isset($editData) ? 'Cancel' : 'Back' }}
+</a>
+                        </button>
     </div>
+    
 </form>
 
-
-            <!-- Divider -->
-            <hr class="my-5">
 
     </div>
 </div>

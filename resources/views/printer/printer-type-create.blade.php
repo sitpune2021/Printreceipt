@@ -7,7 +7,7 @@
         <div class="card-header bg-gradient-primary py-4 text-white"
              style="background: linear-gradient(135deg, #00d2ff 0%, #1d2632ff 100%);">
             <div class="d-flex justify-content-between align-items-center">
-                <h3 class="fw-bold mb-1"><i class="bi bi-printer-fill me-2"></i>Printer Types</h3>
+                <h3 class="fw-bold mb-1"><i class="bi bi-printer-fill me-2"></i>Printer Type</h3>
                   <div class="bg-white rounded-3 p-2 shadow-sm">
                     <i class="fas fa-print text-primary fs-4"></i>
                 </div>
@@ -99,14 +99,14 @@
                 </div>
 
                 <!-- Buttons -->
-                <div class="d-flex justify-content-end align-items-center border-top pt-4 mt-2">
+                <div class="d-flex justify-content-end align-items-center pt-4 mt-2">
                     <div class="d-flex gap-3">
                         <button type="submit" class="btn px-4 shadow-sm text-white" style="background-color: #1A3645;">
                             <i class="bi bi-save me-2"></i>{{ isset($editData) ? 'Update' : 'Save' }}
                         </button>
                         <button type="submit" class="btn shadow-sm text-white" style="background-color: #1A3645;">
                           <a href="{{ route('printer.printer-type') }}" class="btn  shadow-sm text-white" style="background-color: #1A3645;">
-   Back
+{{ isset($editData) ? 'Cancel' : 'Back' }}
 </a>
                         </button>
                     </div>
