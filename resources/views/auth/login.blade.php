@@ -17,7 +17,7 @@
                         <div class="mb-3">
                             <label for="email" class="form-label text-muted small mb-1">{{ __('Email Address') }}</label>
                             <div class="input-group input-group-sm">
-                                <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                               
                                 <input id="email" type="email" class="form-control form-control-sm @error('email') is-invalid @enderror"
                                        name="email" value="{{ old('email') }}"  autocomplete="email" autofocus
                                        placeholder="Your email">
@@ -33,10 +33,13 @@
                         <div class="mb-3">
                             <label for="password" class="form-label text-muted small mb-1">{{ __('Password') }}</label>
                             <div class="input-group input-group-sm">
-                                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                               
                                 <input id="password" type="password" class="form-control form-control-sm @error('password') is-invalid @enderror"
                                        name="password"  autocomplete="current-password"
                                        placeholder="Enter password">
+                                        <span class="input-group-text" onclick="togglePassword('password', 'toggle-icon1')" style="cursor: pointer;">
+            <i class="fa fa-eye-slash" id="toggle-icon1"></i>
+        </span>
                             </div>
                             @error('password')
                             <span class="invalid-feedback d-block small" role="alert">
@@ -98,18 +101,11 @@
         background-clip: content-box, border-box;
     }
 
-    .form-control, .form-control-sm {
-        border-left: 0;
-        padding: 8px 10px;
-        height: auto;
-        font-size: 0.875rem;
+     .form-control, .form-control-sm {
+        height: 35px;
     }
 
-    .input-group-text {
-        background-color: white;
-        border-right: 0;
-        padding: 0.375rem 0.75rem;
-    }
+
 
     .form-control:focus {
         box-shadow: none;
@@ -118,5 +114,20 @@
 </style>
 
 <!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 @endsection
+<script>
+    function togglePassword(fieldId, iconId) {
+        const field = document.getElementById(fieldId);
+        const icon = document.getElementById(iconId);
+ 
+        if (field.type === 'password') {
+            field.type = 'text';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        } else {
+            field.type = 'password';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        }
+    }
+</script>

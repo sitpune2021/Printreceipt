@@ -19,7 +19,10 @@ class PrinterTypeController extends Controller
        $printerTypes = PrinterType::orderBy('created_at', 'asc')->get(); // ascending order
         return view('printer.printer-type', compact('printerTypes'));
     }
-
+public function createForm()
+{
+    return view('printer.printer-type-create');
+}
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -28,11 +31,11 @@ class PrinterTypeController extends Controller
             'protocol' => 'required|string|max:255',
             'description' => 'nullable|string|max:250',
         ], [
-            'printer_type_id.required' => 'Printer Type ID is required.',
-            'printer_type_id.unique'   => 'Printer Type ID must be unique.',
-            'name.required'            => 'Printer Type Name is required.',
-            'protocol.required'        => 'Communication Protocol is required.',
-            'description.max'          => 'Description cannot exceed 250 characters.',
+            'printer_type_id.required' => 'The Printer Type ID is required.',
+            'printer_type_id.unique'   => 'The Printer Type ID must be unique.',
+            'name.required'            => 'The Printer Type Name is required.',
+            'protocol.required'        => 'Select the Communication Protocol is required.',
+            'description.max'          => 'The Description cannot exceed 250 characters.',
         ]);
 
         $validated['status'] = $request->has('status') ? 1 : 0;
@@ -48,7 +51,7 @@ class PrinterTypeController extends Controller
        $printerTypes = PrinterType::orderBy('created_at', 'asc')->get();
         $editData = PrinterType::findOrFail($id);
 
-        return view('printer.printer-type', compact('printerTypes', 'editData'));
+        return view('printer.printer-type-create', compact('printerTypes', 'editData'));
     }
 
     public function update(Request $request, $id)
@@ -66,10 +69,10 @@ class PrinterTypeController extends Controller
             'protocol' => 'required|string|max:255',
             'description' => 'nullable|string|max:250',
         ], [
-            'printer_type_id.required' => 'Printer Type ID is required.',
-            'printer_type_id.unique'   => 'Printer Type ID must be unique.',
-            'name.required'            => 'Printer Type Name is required.',
-            'protocol.required'        => 'Communication Protocol is required.',
+            'printer_type_id.required' => 'The Printer Type ID is required.',
+            'printer_type_id.unique'   => 'The Printer Type ID must be unique.',
+            'name.required'            => 'The Printer Type Name is required.',
+            'protocol.required'        => 'Select the Communication Protocol is required.',
             'description.max'          => 'Description cannot exceed 250 characters.',
         ]);
 

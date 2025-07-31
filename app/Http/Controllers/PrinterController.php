@@ -19,6 +19,12 @@ class PrinterController extends Controller
     
 }
 
+public function createForm()
+{
+    $printerTypes = PrinterType::all(); // हे लाइन आवश्यक आहे
+    return view('printer.printers-create', compact('printerTypes'));
+}
+
 
     public function store(Request $request)
     {
@@ -30,6 +36,7 @@ class PrinterController extends Controller
             ],
             'model' => 'required|string|max:255',
             'display_name' => 'required|string|max:255',
+              'printer_type_id' => 'required|exists:printer_types,id',
         ]);
 Printer::create([
     // Inside store:
@@ -49,7 +56,7 @@ public function edit($id)
     $printer = Printer::findOrFail($id);
     $printers = Printer::all();
     $printerTypes = PrinterType::all();
-    return view('printer.printers', compact('printer', 'printers', 'printerTypes'));
+    return view('printer.printers-create', compact('printer', 'printers', 'printerTypes'));
 }
     public function update(Request $request, $id)
     {
