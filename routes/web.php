@@ -18,6 +18,8 @@ Route::get('/printer-type', [HomeController::class, 'printerType'])->name('print
 
 
 // Printer Types Routes
+Route::get('/printer-type/create', [PrinterTypeController::class, 'createForm'])->name('printer.printer-type.create');
+
 Route::get('/printer-type', [PrinterTypeController::class, 'create'])->name('printer.printer-type');
 Route::post('/printer-type', [PrinterTypeController::class, 'store'])->name('printer.printer-type.store');
 Route::get('/printer-type/{id}/edit', [PrinterTypeController::class, 'edit'])->name('printer.printer-type.edit');
@@ -25,8 +27,7 @@ Route::post('/printer-type/{id}/update', [PrinterTypeController::class, 'update'
 Route::delete('/printer-type/{id}', [PrinterTypeController::class, 'destroy'])->name('printer.printer-type.destroy');
 
 
-
-
+Route::get('/printer-setting/create', [PrinterSettingController::class, 'createForm'])->name('printer.printer-setting.create');
 
 
 Route::get('/printer-setting', [PrinterSettingController::class, 'index'])->name('printer.printer-setting');
@@ -34,7 +35,13 @@ Route::post('/printer-setting', [PrinterSettingController::class, 'store'])->nam
 Route::get('/printer-setting/{id}/edit', [PrinterSettingController::class, 'edit'])->name('printer.setting.edit');
 Route::post('/printer-setting/{id}/update', [PrinterSettingController::class, 'update'])->name('printer.setting.update');
 Route::delete('/printer-setting/{id}', [PrinterSettingController::class, 'destroy'])->name('printer.setting.delete');
+
+
 // printers Route
+
+
+Route::get('/printers/create', [PrinterController::class, 'createForm'])->name('printer.printers.create');
+
 Route::get('/printers', [PrinterController::class, 'index'])->name('printers.index');
 Route::post('/printers/store', [PrinterController::class, 'store'])->name('printers.store');
 Route::get('/printers/edit/{id}', [PrinterController::class, 'edit'])->name('printers.edit');

@@ -8,12 +8,20 @@ use App\Models\PrinterType;
 
 class PrinterSettingController extends Controller
 {
-    public function index()
-    {
-        $printerTypes = PrinterType::all();
-      $printerSettings = PrinterSetting::with('printer_type')->orderBy('id')->get();
-        return view('printer.printer-setting', compact('printerSettings', 'printerTypes'));
-    }
+   public function index()
+{
+    $printerTypes = PrinterType::all();
+    $printerSettings = PrinterSetting::with('printerType')->get();
+
+    return view('printer.printer-setting', compact('printerSettings', 'printerTypes'));
+}
+
+
+public function createForm()
+{
+    $printerTypes = PrinterType::all(); // हे लाइन आवश्यक आहे
+    return view('printer.printer-setting-create', compact('printerTypes'));
+}
 
     public function store(Request $request)
     {
@@ -38,13 +46,12 @@ class PrinterSettingController extends Controller
         $editData = PrinterSetting::findOrFail($id);
         $printerSettings = PrinterSetting::orderBy('id', 'asc')->get();
         $printerTypes = PrinterType::all();
-        return view('printer.printer-setting', compact('editData', 'printerSettings', 'printerTypes'));
+        return view('printer.printer-setting-create', compact('editData', 'printerSettings', 'printerTypes'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'printer_type_id' => 'required|exists:printer_types,id',
             'margin_top' => 'required',
             'margin_bottom' => 'required',
             'margin_left' => 'required',
