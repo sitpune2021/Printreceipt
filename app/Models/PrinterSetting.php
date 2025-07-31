@@ -8,16 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class PrinterSetting extends Model
 {
+  
+    
     protected $fillable = [
-        'printer_type_id',
-        'margin_top',
-        'margin_bottom',
-        'margin_left',
-        'margin_right',
-        'font_size',
-        'line_spacing',
-        'alignment',
-    ];
+    'margin_top',
+    'margin_bottom',
+    'margin_left',
+    'margin_right',
+    'font_size',
+    'line_spacing',
+    'printer_type_id',
+    'alignment'
+];
+
 
     // ✅ Add this method to fix the error:
     public function printerType()

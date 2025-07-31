@@ -15,10 +15,10 @@
 
                 <!-- Desktop View Dropdown -->
                 <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                    <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" class="avatar img-fluid rounded-circle me-1" alt="User" />
+                    <img src="{{asset('assets/img/icons/user.png')}}" class="avatar img-fluid rounded-circle me-1" alt="User" />
                     <span class="text-dark">{{ Auth::user()->name }}</span>
                 </a>
-
+    
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

@@ -14,11 +14,12 @@ use App\Http\Controllers\Controller;
 
 class PrinterTypeController extends Controller
 {
-    public function create()
-    {
-       $printerTypes = PrinterType::orderBy('created_at', 'asc')->get(); // ascending order
-        return view('printer.printer-type', compact('printerTypes'));
-    }
+ public function create()
+{
+    $printerTypes = PrinterType::orderBy('created_at', 'desc')->get(); // descending order
+    return view('printer.printer-type', compact('printerTypes'));
+}
+
 public function createForm()
 {
     return view('printer.printer-type-create');
