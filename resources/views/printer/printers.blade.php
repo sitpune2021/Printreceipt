@@ -18,7 +18,6 @@
             <thead style="background: linear-gradient(135deg, #00d2ff 0%, #1d2632ff 100%); color:white">
                 <tr>
                     <th>Sr No</th>
-                    <th>Printer Type Id</th>
                     <th>MAC Address</th>
                     <th>Model</th>
                     <th>Display Name</th>
@@ -32,7 +31,7 @@
                 @foreach ($printers as $printer)
                     <tr>
                         <td>{{ $printer->id }}</td>
-                        <td>{{ $printer->printerType->printer_type_id ?? 'N/A' }}</td>
+
                         <td>{{ $printer->mac_address }}</td>
                         <td>{{ $printer->model }}</td>
                         <td>{{ $printer->display_name }}</td>

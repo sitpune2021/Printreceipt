@@ -7,11 +7,23 @@
             <span class="align-middle fw-bold text-primary fs-5">PrintReceipt</span>
         </a>
 
+
+
         <ul class="sidebar-nav">
 
+
+            <!-- Dashboard -->
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ url('/') }}">
+                    <i class="align-middle" data-feather="home"></i>
+                    <span class="align-middle">Dashboard</span>
+                </a>
+            </li>
             <li class="sidebar-header">
                 Pages
             </li>
+
+
 
 
 

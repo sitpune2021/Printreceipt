@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Printer;
+use App\Models\PrinterType;
 
 class HomeController extends Controller
 {
@@ -20,16 +23,33 @@ class HomeController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
+     *
+     *
+     *
      */
+
+
+
+
     public function index()
     {
-        return view('dashbord');
+    $userCount = User::count();
+    $printerCount = Printer::count();
+    $printerTypeCount = PrinterType::count();
+
+
+       return view('dashbord', compact('userCount', 'printerCount', 'printerTypeCount'));
     }
+
+    
 
     public function printerType()
     {
         return view('printer.printer-type');
     }
 
-   
+
+
+
+
 }
